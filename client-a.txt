@@ -2,3 +2,50 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+# Start the program
+START
+
+  # Import random number generator
+  IMPORT random
+  
+  # Generate a random number between 1 and 10.
+  # Set 'random_number' variable to the random integer
+  SET 'random_number' = random integer between 1 and 10
+  
+  # Set the number of chances (3 attempts) to 'chances' variable.
+  SET 'chances' = 3
+  
+  # Loop for the number of chances
+  WHILE 'chances' > 0:
+    
+    # Prompt user for input
+    PRINT "Guess the number between 1 and 10:"
+    
+    GET 'user_guess'
+    # 'user_guess' is now a varieable with their entry set
+
+    # Convert user input to integer (if needed)
+    # If no entry validation done, parse entry using a package to integer
+    CONVERT 'user_guess' to integer
+    
+    # Compare the user’s guess ('user_guess') to the random number ('random_number')
+    IF 'user_guess' == 'random_number':
+        PRINT "Congratulations! You guessed correctly."
+
+    # Exit the loop if guess is correct.        
+    BREAK
+    
+    # If incorrect, tell the user and decrease number of chances
+    ELSE:
+        PRINT "Sorry, that’s incorrect. Try again."
+        SUBTRACT 1 from 'chances'
+        # Call the variable in an f-string for print out to user
+        PRINT "You have " + f('chances') + " chances left."
+    
+  # If all chances are used and no correct guess
+  IF 'chances' == 0:
+    # Call the variable in an f-string for print out to user
+    PRINT "You’ve run out of chances. The correct number was: " + f('random_number')
+  
+# End the program
+END

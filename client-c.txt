@@ -2,3 +2,37 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+# Scanning device and process are assumed to be known and logic only needed for
+the incrementation of packages.
+
+# Start the program
+START
+
+  # Set the maximum number of packages that can fit in a case to variable.
+  SET 'max_packages' = 50
+  
+  # Initialize a counter for product packages as variable.
+  # How many product packages have been scanned.
+  SET 'package_count' = 0
+  
+  # Initialize a counter for the total number of products scanned as variable.
+  # Total number of products scanned (each package contains 2 products).
+  SET 'product_count' = 0
+
+  # Loop through the process of scanning and counting product packages
+  WHILE 'package_count' < 'max_packages':
+    
+    # Simulate scanning a product package (each package contains 2 products)
+    ADD 2 to 'product_count'
+    
+    # Increment the package count by 1
+    ADD 1 to 'package_count'
+    
+    # Display the current count of products and packages to the user
+    PRINT "Package " + 'package_count' + ": " + 'product_count' + " products scanned."
+  
+  # When the maximum number of packages is reached, end the loop
+  PRINT "All 50 packages have been scanned. Total products: " + 'product_count'
+  
+# End the program
+END

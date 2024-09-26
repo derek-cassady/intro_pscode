@@ -2,3 +2,46 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+# Start the program
+START
+
+  # Assume the warehouse is represented as a grid with (x, y) coordinates.
+  # Initialize starting position by assigning coordinates to variables
+  SET 'position_x' = 0
+  SET 'position_y' = 0
+
+  # Set the target location (for example, the goal is at x=5, y=5)
+  SET 'target_x' = 5
+  SET 'target_y' = 5
+  
+  # Loop until the user reaches the target location
+  WHILE 'position_x' != 'target_x' OR 'position_y' != 'target_y':
+    
+    # Display current position to the user
+    PRINT "You are currently at (" '+ position_x' + ", " '+ position_y' + ")."
+    
+    # Ask the user for a direction to move (north, south, east, west)
+    PRINT "Enter a direction to move (north, south, east, west):"
+    GET 'user_direction'
+    # 'user_direction' is now a variable with their entry as a string
+
+
+    # Move the user based on the entry saved to variable 'user_direction'
+    IF 'user_direction' == "north":
+        ADD 1 to 'position_y'
+    ELSE IF 'user_direction' == "south":
+        SUBTRACT 1 from 'position_y'
+    ELSE IF 'user_direction' == "east":
+        ADD 1 to 'position_x'
+    ELSE IF 'user_direction' == "west":
+        SUBTRACT 1 from 'position_x'
+    ELSE:
+        PRINT "Invalid direction. Please enter north, south, east, or west."
+    
+    # Check if the user has reached the target
+    IF 'position_x' == 'target_x' AND 'position_y' == 'target_y':
+        PRINT "Congratulations! You've found the location."
+        BREAK
+    
+# End the program
+END
